@@ -1,9 +1,13 @@
 from django.db import models
 
-# Account Model
 class AppAccount(models.Model):
+    account_id = models.AutoField(primary_key=True)
     account_number = models.CharField(max_length=50, unique=True)
-    password = models.CharField(max_length=255)
+    password = models.CharField(max_length=255)  # Keeping password as plain text
+
+    def __str__(self):
+        return self.account_number
+
 
 # Business Model
 class Business(models.Model):

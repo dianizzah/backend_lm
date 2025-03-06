@@ -1,5 +1,10 @@
 from rest_framework import serializers
-from .models import Business, Loan, LoanRepayment, Transaction
+from .models import AppAccount, Business, Loan, LoanRepayment, Transaction
+
+class AppAccountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AppAccount
+        fields = '__all__'
 
 class BusinessSerializer(serializers.ModelSerializer):
     class Meta:
